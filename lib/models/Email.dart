@@ -6,15 +6,17 @@ class Email {
   final Color tagColor;
 
   Email({
-    this.time,
-    this.isChecked,
-    this.image,
-    this.name,
-    this.subject,
-    this.body,
-    this.isAttachmentAvailable,
-    this.tagColor,
+    required this.time,
+    required this.isChecked,
+    required this.image,
+    required this.name,
+    required this.subject,
+    required this.body,
+    required this.isAttachmentAvailable,
+    required this.tagColor,
   });
+
+  get emailAddress => null;
 }
 
 List<Email> emails = List.generate(
@@ -38,7 +40,7 @@ List demo_data = [
     "subject": "iPhone 12 is here",
     "isAttachmentAvailable": false,
     "isChecked": true,
-    "tagColor": null,
+    "tagColor": Colors.grey,
     "time": "Now"
   },
   {
@@ -47,7 +49,7 @@ List demo_data = [
     "subject": "Inspiration for our new home",
     "isAttachmentAvailable": true,
     "isChecked": false,
-    "tagColor": null,
+    "tagColor": Colors.grey,
     "time": "15:32"
   },
   {
@@ -56,7 +58,7 @@ List demo_data = [
     "subject": "Business-focused empowering the world",
     "isAttachmentAvailable": true,
     "isChecked": false,
-    "tagColor": null,
+    "tagColor": Colors.grey,
     "time": "14:27",
   },
   {

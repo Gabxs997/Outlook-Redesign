@@ -7,10 +7,10 @@ import '../../../extensions.dart';
 
 class EmailCard extends StatelessWidget {
   const EmailCard({
-    Key key,
+    required Key key,
     this.isActive = true,
-    this.email,
-    this.press,
+    required this.email,
+    required this.press,
   }) : super(key: key);
 
   final bool isActive;
@@ -19,8 +19,10 @@ class EmailCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //  Here the shadow is not showing properly
     return Padding(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.symmetric(
+          horizontal: kDefaultPadding, vertical: kDefaultPadding / 2),
       child: InkWell(
         onTap: press,
         child: Stack(
@@ -58,7 +60,7 @@ class EmailCard extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText2
-                                    .copyWith(
+                                    ?.copyWith(
                                       color:
                                           isActive ? Colors.white : kTextColor,
                                     ),
@@ -71,7 +73,7 @@ class EmailCard extends StatelessWidget {
                         children: [
                           Text(
                             email.time,
-                            style: Theme.of(context).textTheme.caption.copyWith(
+                            style: Theme.of(context).textTheme.caption?.copyWith(
                                   color: isActive ? Colors.white70 : null,
                                 ),
                           ),
@@ -79,7 +81,7 @@ class EmailCard extends StatelessWidget {
                           if (email.isAttachmentAvailable)
                             WebsafeSvg.asset(
                               "assets/Icons/Paperclip.svg",
-                              color: isActive ? Colors.white70 : kGrayColor,
+                              colorFilter: ColorFilter.mode(isActive ? Colors.white70 : kGrayColor, BlendMode.srcIn) ,
                             )
                         ],
                       ),
@@ -90,7 +92,7 @@ class EmailCard extends StatelessWidget {
                     email.body,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.caption.copyWith(
+                    style: Theme.of(context).textTheme.caption?.copyWith(
                           height: 1.5,
                           color: isActive ? Colors.white70 : null,
                         ),
@@ -121,6 +123,7 @@ class EmailCard extends StatelessWidget {
                   offset: Offset(2, 2),
                 ),
               ),
+            // ignore: unnecessary_null_comparison
             if (email.tagColor != null)
               Positioned(
                 left: 8,
@@ -128,7 +131,7 @@ class EmailCard extends StatelessWidget {
                 child: WebsafeSvg.asset(
                   "assets/Icons/Markup filled.svg",
                   height: 18,
-                  color: email.tagColor,
+                  colorFilter: ColorFilter.mode(email.tagColor, BlendMode.srcIn) ,
                 ),
               )
           ],
