@@ -62,7 +62,7 @@ class EmailScreen extends StatelessWidget {
                             ),
                             SizedBox(height: kDefaultPadding),
                             Text(
-                              "Hello my love, \n\nSunt architecto voluptatum esse tempora sint nihil minus incidunt nisi. Perspiciatis natus quo unde magnam numquam pariatur amet ut. Perspiciatis ab totam. Ut labore maxime provident. Voluptate ea omnis et ipsum asperiores laborum repellat explicabo fuga. Dolore voluptatem praesentium quis eos laborum dolores cupiditate nemo labore. \n\nLove you, \n\nElvia",
+                              "Hello my love, \n\nSunt architecto voluptatum esse tempora sint nihil minus incidunt nisi. Perspiciatis natus quo unde magnam numquam pariatur amet ut. Perspiciatis ab totam. Ut labore maxime provident. Voluptate ea omnis et ipsum asperiores laborum repellat explicabo fuga. Dolore voluptatem praesentium quis eos laborum dolores cupiditate nemo labore. \n\nLove you, \n\nElenor",
                               style: TextStyle(
                                 height: 1.5,
                                 color: Color(0xFF4D5875),
